@@ -50,7 +50,7 @@ class GradientBidOptimizer:
 
     def _soft_win_prob(self, bid: torch.Tensor, temperature: float = 0.5) -> torch.Tensor:
         """Вероятность выиграть топ-слот через softmax-аппроксимацию."""
-        all_bids = torch.cat([bid.unsqueeze(0), self.competitor_bids])
+        all_bids = torch.cat([bid, self.competitor_bids])
         probs = torch.softmax(all_bids / temperature, dim=0)
         return probs[0]  # вероятность нашей ставки быть первой
 

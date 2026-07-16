@@ -16,7 +16,7 @@ def test_gsp_basic_three_slots() -> None:
     assert [r.advertiser_id for r in results] == [1, 2, 3]
     assert results[0].price_paid == 8.0  # next effective bid / qs
     assert results[1].price_paid == 5.0
-    assert results[2].price_paid == 1.0  # reserve price
+    assert results[2].price_paid == 2.0  # next effective bid (4th bidder)
 
 
 def test_gsp_quality_score_changes_price() -> None:

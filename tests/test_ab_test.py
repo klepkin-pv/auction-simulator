@@ -12,7 +12,7 @@ def test_ttest_detects_significant_difference() -> None:
     treatment = rng.normal(loc=12.0, scale=1.0, size=100)
 
     result = ttest_two_groups(control, treatment, alpha=0.05)
-    assert result["significant"] is True
+    assert result["significant"]
     assert result["lift_pct"] > 0
 
 
@@ -22,7 +22,7 @@ def test_ttest_no_difference_when_equal() -> None:
     treatment = rng.normal(loc=10.0, scale=1.0, size=100)
 
     result = ttest_two_groups(control, treatment, alpha=0.05)
-    assert result["significant"] is False
+    assert not result["significant"]
 
 
 def test_bootstrap_ci() -> None:
