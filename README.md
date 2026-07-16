@@ -1,5 +1,7 @@
 # Ad Auction Simulator
 
+![CI](https://github.com/klepkin-pv/auction-simulator/actions/workflows/ci.yml/badge.svg)
+
 Пет-проект: симулятор рекламного аукциона с ML-оптимизацией ставок.
 
 Создан как демонстрация навыков для позиции DS-стажёра в команде рекламной монетизации.
@@ -20,6 +22,17 @@
 - Python, NumPy, Pandas, Scikit-learn, PyTorch, SciPy
 - SQLite + SQLAlchemy (SQL-аналитика)
 - Matplotlib, Seaborn
+
+## Тесты
+
+Автотесты покрывают аукционные механизмы, оптимизатор ставок, A/B-тесты и CTR-модели:
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+pytest
+```
+
+CI запускает `ruff` и `pytest` в GitHub Actions для каждого `push`/`pull_request`.
 
 ## Быстрый старт
 

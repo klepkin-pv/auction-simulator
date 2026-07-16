@@ -8,8 +8,6 @@ GSP (Generalized Second Price) — именно этот механизм исп
 from dataclasses import dataclass
 from typing import List
 
-import numpy as np
-
 
 @dataclass
 class Bid:
